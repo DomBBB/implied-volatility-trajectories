@@ -31,8 +31,7 @@ for each project.
 
 ## Citation
 
-Please cite the publication associated with the project you use. References are
-collected in [CITATION.bib](CITATION.bib), with citation details also provided in
+Please cite the publication associated with the project you use. Citation details are provided in
 the corresponding project README.
 
 ## License
