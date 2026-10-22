@@ -90,7 +90,7 @@ The dataset is built from OptionMetrics end-of-day SPX quotes and index prices u
 
 The paper selects models using training data through 2021 and validation data from 2022, then refits the final models on the combined period through 2022. This notebook contains that **final refit configuration**. Its retained 2022 validation dataset overlaps the refit period; the final fitting calls pass no validation loader.
 
-The paper's data snapshot ends on **29 August 2025**, as recorded in the notebook's saved split summary.
+The paper's data snapshot ends on **29 August 2025**.
 
 ## Release scope
 
