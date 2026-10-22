@@ -49,7 +49,7 @@ Results below are reported in the paper for the held-out **2023–August 2025** 
 - **Probabilistic quality:** at 30 days, average-IV CRPS improves by **10.5%** over the historical-change bootstrap benchmark.
 - **Economic admissibility:** **98.8%** of ensemble-mean surfaces and **88.5%** of individual DDPM surfaces have no detected static-arbitrage violations under the paper's grid checks.
 
-The main limitations are weaker one-day point forecasts and underdispersed predictive intervals. Static-arbitrage penalties are soft constraints, and reported admissibility is assessed on the evaluation grid. See the paper for calibration, dependence, ablations, and the interpretation of the return channel.
+The main limitations are weaker one-day point forecasts and underdispersed predictive intervals.
 
 ## Method
 
