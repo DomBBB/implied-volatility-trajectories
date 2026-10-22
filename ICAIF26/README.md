@@ -66,7 +66,6 @@ The entire forecast horizon is generated jointly rather than by rolling a one-st
 
 - A Google Colab runtime with Google Drive access; a CUDA GPU is recommended for training and generation.
 - A WRDS account with the relevant **OptionMetrics IvyDB US** access.
-- The standard libraries imported in the notebook: PyTorch, NumPy, pandas, Matplotlib, and tqdm. Notebook setup cells install the specialised WRDS, graph, tensor-container, and option-pricing dependencies.
 - Sufficient host memory and storage for the requested forecast ensembles. Sampling and decoding use chunks, but the final archive retains the complete ensembles in memory before saving.
 
 The notebook imports the **bundled smoothing implementation** and loads its supplied pretrained checkpoint. The forecasting autoencoder and diffusion checkpoints are produced by the notebook or reused from the configured Drive folder.
