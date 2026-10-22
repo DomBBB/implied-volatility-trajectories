@@ -33,7 +33,7 @@ The implementation combines an arbitrage-aware surface autoencoder with a condit
 
 ## Main results
 
-Results below are reported in the paper for the held-out **2023–August 2025** sample, with **637 forecast origins** and **1,000 DDPM trajectories per origin**. Surface errors are measured in time-scaled implied volatility, $\Xi=\sqrt{\tau}\,\sigma$, on the observed lattice.
+Results below are reported in the paper for the held-out **2023–August 2025** sample, with **637 forecast origins** and **1,000 DDPM trajectories per origin**. Surface errors are measured in time-scaled implied volatility, $\Xi=\sqrt{\tau}\sigma$, on the observed lattice.
 
 | Forecast horizon | Model-mean RMSE | Persistence RMSE | RMSE reduction |
 | :-- | --: | --: | --: |
