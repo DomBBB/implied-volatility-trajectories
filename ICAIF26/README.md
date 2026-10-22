@@ -82,21 +82,7 @@ The default generation cell requests **1,000 draws for each of two samplers**: 5
 
 ### Saved artifacts
 
-Paths are relative to the chosen Drive project folder.
-
-| Artifact | Default path |
-| :-- | :-- |
-| Raw option quotes and index closes | `data/raw/` |
-| Annual smoother caches | `data/opDsCache/` |
-| Annual smoothed surfaces | `data/opDsProcessed/` |
-| Consolidated surfaces and return features | `data/processed/` |
-| Autoencoder checkpoint | `RAE_FINAL_vF.pt` |
-| Diffusion checkpoint, including the mean gate | `DIFF_FINAL_vF.pt` |
-| Generated forecast archive | `diffusion_dump_vF.pt` |
-
-Existing checkpoints and archives are loaded or skipped according to the notebook's file-existence checks. Use distinct artifact paths when comparing configurations.
-
-Decoded surface arrays in the archive store **normalised log time-scaled IV**, not ordinary IV. The archive also stores the location and scale needed to recover $\Xi$; divide by $\sqrt{\tau}$ to recover ordinary IV. Returns are de-standardised daily log returns.
+Paths are relative to the chosen Drive project folder. Existing checkpoints and archives are loaded or skipped according to the notebook's file-existence checks. Use distinct artifact paths when comparing configurations.
 
 ## Data and experiment
 
@@ -104,11 +90,11 @@ The dataset is built from OptionMetrics end-of-day SPX quotes and index prices u
 
 The paper selects models using training data through 2021 and validation data from 2022, then refits the final models on the combined period through 2022. This notebook contains that **final refit configuration**. Its retained 2022 validation dataset overlaps the refit period; the final fitting calls pass no validation loader.
 
-The paper's data snapshot ends on **29 August 2025**, as recorded in the notebook's saved split summary. Match this cutoff before constructing the datasets for a comparable experiment: the annual WRDS queries cover 2000–2025, and a fresh download can contain later observations. Complete 30-day targets must fit within each split.
+The paper's data snapshot ends on **29 August 2025**, as recorded in the notebook's saved split summary.
 
 ## Release scope
 
-This release covers data preparation, autoencoder and diffusion-model training, and trajectory generation. **Evaluation scripts are not included in this release.** The results above are reported from the paper, rather than recomputed by the released notebook.
+This release covers data preparation, autoencoder and diffusion-model training, and trajectory generation. **Evaluation scripts are not included in this release.**
 
 | File or directory | Purpose |
 | :-- | :-- |
@@ -122,23 +108,12 @@ If this implementation or method is useful in your research, please cite the pap
 Machine-readable metadata is available in [CITATION.cff](CITATION.cff).
 
 ```bibtex
-@misc{buchegger2026arbitrageaware,
-  title         = {Arbitrage-Aware Probabilistic Multi-Step Forecasting of Implied
-                   Volatility Surfaces: Joint Generation of Surface-Return
-                   Trajectories Using Latent Diffusion},
-  author        = {Dominik Manuel Buchegger and Lukas Gonon},
-  year          = {2026},
-  eprint        = {2608.22478},
-  archivePrefix = {arXiv},
-  primaryClass  = {q-fin.MF},
-  url           = {https://arxiv.org/abs/2608.22478},
-  note          = {Accepted at ICAIF 2026}
-}
+TBA
 ```
 
 ## Acknowledgements and license
 
-Surface construction uses [Operator Deep Smoothing for Implied Volatility](https://arxiv.org/abs/2406.11520) and its [upstream implementation](https://github.com/rwicl/operator-deep-smoothing-for-implied-volatility). This directory contains the version used by the notebook; see its [README](operator-deep-smoothing/README.md) and retained upstream notices.
+Surface construction uses [Operator Deep Smoothing for Implied Volatility](https://arxiv.org/abs/2406.11520) and its [implementation](https://github.com/rwicl/operator-deep-smoothing-for-implied-volatility). This directory contains an older version used in our paper.
 
 Project source code is provided under the [MIT License](../LICENSE). The reproduced paper figure is attributed to Buchegger and Gonon (2026), Figure 5, under the paper's [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/). The source-code license does not grant access to or redistribution rights for the underlying OptionMetrics data.
 
