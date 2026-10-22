@@ -78,7 +78,7 @@ The notebook imports the **bundled smoothing implementation** and loads its supp
 4. Run dataset construction, autoencoder fitting or loading, latent encoding, and diffusion fitting or loading in notebook order.
 5. Run forecast generation to save the joint latent, surface, and return trajectories with their dates and normalisation metadata.
 
-The default generation cell requests **1,000 draws for each of two samplers**: 500-step DDPM and 50-step DDIM. The paper's reported results use DDPM. For an exploratory run, use a smaller ensemble before generating the complete archive; changing these settings defines a different sampling experiment.
+The default generation cell requests **1,000 draws for each of two samplers**: 500-step DDPM and 50-step DDIM. The paper's reported results use DDPM. For an exploratory run, use a smaller ensemble before generating the complete archive.
 
 ### Saved artifacts
 
